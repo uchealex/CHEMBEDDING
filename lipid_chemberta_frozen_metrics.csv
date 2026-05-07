@@ -1,0 +1,25 @@
+model,seed,split,metric,value
+ChemBERTa-frozen-RT (CLS only) + OLS,0,Train,R2,0.38403093715803815
+ChemBERTa-frozen-RT (CLS only) + OLS,0,Train,MAE,107.4012217971833
+ChemBERTa-frozen-RT (CLS only) + OLS,0,Test,R2,0.38656199515131273
+ChemBERTa-frozen-RT (CLS only) + OLS,0,Test,MAE,108.37372628598679
+ChemBERTa-frozen-RT (CLS only) + Ridge1,0,Train,R2,0.3840308913064837
+ChemBERTa-frozen-RT (CLS only) + Ridge1,0,Train,MAE,107.40145396037273
+ChemBERTa-frozen-RT (CLS only) + Ridge1,0,Test,R2,0.38657324448318775
+ChemBERTa-frozen-RT (CLS only) + Ridge1,0,Test,MAE,108.37328145256346
+ChemBERTa-frozen-RT (CLS only) + Ridge100,0,Train,R2,0.3836625089373724
+ChemBERTa-frozen-RT (CLS only) + Ridge100,0,Train,MAE,107.45498938123758
+ChemBERTa-frozen-RT (CLS only) + Ridge100,0,Test,R2,0.3870752601644768
+ChemBERTa-frozen-RT (CLS only) + Ridge100,0,Test,MAE,108.38413291318687
+"ChemBERTa-Concat (frozen, closed-form) + OLS",0,Train,R2,0.4399279806988762
+"ChemBERTa-Concat (frozen, closed-form) + OLS",0,Train,MAE,101.5960763691901
+"ChemBERTa-Concat (frozen, closed-form) + OLS",0,Test,R2,0.4434140544916835
+"ChemBERTa-Concat (frozen, closed-form) + OLS",0,Test,MAE,102.16063785225221
+"ChemBERTa-Concat (frozen, closed-form) + Ridge1",0,Train,R2,0.45604580942005624
+"ChemBERTa-Concat (frozen, closed-form) + Ridge1",0,Train,MAE,99.77104563786378
+"ChemBERTa-Concat (frozen, closed-form) + Ridge1",0,Test,R2,0.45916148837656157
+"ChemBERTa-Concat (frozen, closed-form) + Ridge1",0,Test,MAE,100.19891348244686
+"ChemBERTa-Concat (frozen, closed-form) + Ridge100",0,Train,R2,0.43724944870545757
+"ChemBERTa-Concat (frozen, closed-form) + Ridge100",0,Train,MAE,102.02556212438684
+"ChemBERTa-Concat (frozen, closed-form) + Ridge100",0,Test,R2,0.44252129904317894
+"ChemBERTa-Concat (frozen, closed-form) + Ridge100",0,Test,MAE,102.54204136079689
