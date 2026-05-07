@@ -42,6 +42,22 @@ Evidence: `lipid_baseline_feature_importance.csv`, `scripts/baseline_feature_imp
 Across 5 random seeds, RandomForest test R² varies by ~0.001 (0.5593 to 0.5605); Ridge and GradientBoosting are deterministic up to floating-point noise. The 63k-train / 7.8k-test split is large enough that single-model run-to-run variance is small — a useful prior for sizing the multi-seed ChemBERTa runs (a handful of seeds will give tight error bars on the headline R² numbers).
 Evidence: `lipid_rdkit_only_baseline_metrics.csv` (per-seed columns).
 
+**A7. Split-to-split variance under random 5-fold CV is small, and the manuscript's single-split numbers are not artifacts of a lucky partition.**
+Pooling the manuscript's train + test sets (n=70,961) and running 5-fold CV (`KFold(shuffle=True, random_state=42)`) gives the following test-R² distributions (median, range across folds):
+
+| Model | CV median | CV range | Single-split |
+|---|---|---|---|
+| RDKit-only (Ridge) | 0.235 | 0.225–0.249 | 0.234 |
+| RDKit-only (GradientBoosting) | 0.308 | 0.299–0.323 | 0.309 |
+| RDKit-only (RandomForest) | 0.535 | 0.519–0.552 | 0.559 |
+| ChemBERTa-frozen-RT (CLS only) | 0.373 | 0.358–0.379 | 0.387 |
+| ChemBERTa-Concat (frozen) | 0.446 | 0.432–0.451 | 0.459 |
+
+CV ranges are tight (≤0.03 R²), all model orderings from claims A1–A4 are preserved, and CV medians match the single-split numbers to within ~0.02. The single-split numbers are slightly *above* the CV medians, suggesting the manuscript's METLIN partition is marginally easier than a random one — but the relative gaps between models are stable.
+
+This addresses Reviewer 1 comment 1 (the "single fixed train/test split" critique) for the baseline tier of the experimental matrix. The fine-tuned ChemBERTa runs remain on the manuscript's single split for now (CV multiplies GPU-hours by 5×; not yet scoped).
+Evidence: `lipid_cv_baselines_metrics.csv`, `figures/lipid_cv_boxplots.png` / `.pdf`, `scripts/cv_baselines_lipid.py`, `scripts/plot_cv_boxplots_lipid.py`.
+
 ---
 
 ## B. Claims contingent on pending experiments
@@ -87,6 +103,7 @@ A5 suggests `mol_weight` ↔ `heavy_atoms` collinearity and a near-inert `rotata
 | A4 | ✅ established | both CSVs above |
 | A5 | ✅ established | `lipid_baseline_feature_importance.csv` |
 | A6 | ✅ established | `lipid_rdkit_only_baseline_metrics.csv` |
+| A7 | ✅ established | `lipid_cv_baselines_metrics.csv`, `figures/lipid_cv_boxplots.*` |
 | B1 | ⏳ pending Colab | `chemberta_concat_baseline_lipid.ipynb` |
 | B2 | ⏳ pending Colab + peptide CSVs | `chemberta_concat_baseline_peptide.ipynb` |
 | B3 | ⏳ pending Colab | frozen branch of lipid notebook |

@@ -1,0 +1,101 @@
+model,fold,split,metric,value
+RDKit-only (Ridge),0,Train,R2,0.24036051617470733
+RDKit-only (Ridge),0,Train,MAE,120.0458445165176
+RDKit-only (Ridge),0,Test,R2,0.22468844282009948
+RDKit-only (Ridge),0,Test,MAE,121.10335649667611
+RDKit-only (RandomForest),0,Train,R2,0.9124053435503885
+RDKit-only (RandomForest),0,Train,MAE,36.12950851090459
+RDKit-only (RandomForest),0,Test,R2,0.5191733759079089
+RDKit-only (RandomForest),0,Test,MAE,85.27429544528003
+RDKit-only (GradientBoosting),0,Train,R2,0.3238212845937507
+RDKit-only (GradientBoosting),0,Train,MAE,112.35687135039528
+RDKit-only (GradientBoosting),0,Test,R2,0.3019182773355322
+RDKit-only (GradientBoosting),0,Test,MAE,113.36967844814932
+ChemBERTa-frozen-RT (CLS only),0,Train,R2,0.38929066276222846
+ChemBERTa-frozen-RT (CLS only),0,Train,MAE,107.16018585271739
+ChemBERTa-frozen-RT (CLS only),0,Test,R2,0.3589253983727295
+ChemBERTa-frozen-RT (CLS only),0,Test,MAE,109.15942706888409
+ChemBERTa-Concat (frozen),0,Train,R2,0.46145053141161985
+ChemBERTa-Concat (frozen),0,Train,MAE,99.49686630946807
+ChemBERTa-Concat (frozen),0,Test,R2,0.4315076116250647
+ChemBERTa-Concat (frozen),0,Test,MAE,101.558045330651
+RDKit-only (Ridge),1,Train,R2,0.23811750192908987
+RDKit-only (Ridge),1,Train,MAE,120.16790078056019
+RDKit-only (Ridge),1,Test,R2,0.23369391692883346
+RDKit-only (Ridge),1,Test,MAE,120.80408339946622
+RDKit-only (RandomForest),1,Train,R2,0.9117689592794767
+RDKit-only (RandomForest),1,Train,MAE,36.23261230843473
+RDKit-only (RandomForest),1,Test,R2,0.534820896731522
+RDKit-only (RandomForest),1,Test,MAE,84.90562670431689
+RDKit-only (GradientBoosting),1,Train,R2,0.32419425828699155
+RDKit-only (GradientBoosting),1,Train,MAE,112.19834366493406
+RDKit-only (GradientBoosting),1,Test,R2,0.3083736419459616
+RDKit-only (GradientBoosting),1,Test,MAE,113.73526869794135
+ChemBERTa-frozen-RT (CLS only),1,Train,R2,0.3859621595828806
+ChemBERTa-frozen-RT (CLS only),1,Train,MAE,107.2895542586057
+ChemBERTa-frozen-RT (CLS only),1,Test,R2,0.37321026771336463
+ChemBERTa-frozen-RT (CLS only),1,Test,MAE,108.70694909294669
+ChemBERTa-Concat (frozen),1,Train,R2,0.45810582564751456
+ChemBERTa-Concat (frozen),1,Train,MAE,99.70959516904024
+ChemBERTa-Concat (frozen),1,Test,R2,0.4455758334316332
+ChemBERTa-Concat (frozen),1,Test,MAE,100.95516229240306
+RDKit-only (Ridge),2,Train,R2,0.23771615266878
+RDKit-only (Ridge),2,Train,MAE,120.43954664299997
+RDKit-only (Ridge),2,Test,R2,0.23512302151470765
+RDKit-only (Ridge),2,Test,MAE,119.930961891656
+RDKit-only (RandomForest),2,Train,R2,0.9111434778066885
+RDKit-only (RandomForest),2,Train,MAE,36.35485272104158
+RDKit-only (RandomForest),2,Test,R2,0.5323972349453261
+RDKit-only (RandomForest),2,Test,MAE,84.55992069112992
+RDKit-only (GradientBoosting),2,Train,R2,0.3240732126392777
+RDKit-only (GradientBoosting),2,Train,MAE,112.34614429270158
+RDKit-only (GradientBoosting),2,Test,R2,0.29890547661565237
+RDKit-only (GradientBoosting),2,Test,MAE,113.86197470772564
+ChemBERTa-frozen-RT (CLS only),2,Train,R2,0.38956761206702784
+ChemBERTa-frozen-RT (CLS only),2,Train,MAE,107.02822543379098
+ChemBERTa-frozen-RT (CLS only),2,Test,R2,0.357547586020894
+ChemBERTa-frozen-RT (CLS only),2,Test,MAE,109.95394194859931
+ChemBERTa-Concat (frozen),2,Train,R2,0.4603741109387245
+ChemBERTa-Concat (frozen),2,Train,MAE,99.47237524755529
+ChemBERTa-Concat (frozen),2,Test,R2,0.43506172598990156
+ChemBERTa-Concat (frozen),2,Test,MAE,101.91805070492164
+RDKit-only (Ridge),3,Train,R2,0.23417772891799782
+RDKit-only (Ridge),3,Train,MAE,120.4074916250485
+RDKit-only (Ridge),3,Test,R2,0.2489795953252255
+RDKit-only (Ridge),3,Test,MAE,120.10534159930206
+RDKit-only (RandomForest),3,Train,R2,0.9104539645121289
+RDKit-only (RandomForest),3,Train,MAE,36.338000385396256
+RDKit-only (RandomForest),3,Test,R2,0.5486044203696423
+RDKit-only (RandomForest),3,Test,MAE,84.21289170208159
+RDKit-only (GradientBoosting),3,Train,R2,0.3186027540636843
+RDKit-only (GradientBoosting),3,Train,MAE,112.40689219791133
+RDKit-only (GradientBoosting),3,Test,R2,0.32263978073527055
+RDKit-only (GradientBoosting),3,Test,MAE,113.55671573728314
+ChemBERTa-frozen-RT (CLS only),3,Train,R2,0.38504271175294136
+ChemBERTa-frozen-RT (CLS only),3,Train,MAE,107.21975399568954
+ChemBERTa-frozen-RT (CLS only),3,Test,R2,0.3767617836340199
+ChemBERTa-frozen-RT (CLS only),3,Test,MAE,108.73815994348709
+ChemBERTa-Concat (frozen),3,Train,R2,0.456541859773555
+ChemBERTa-Concat (frozen),3,Train,MAE,99.6419520209936
+ChemBERTa-Concat (frozen),3,Test,R2,0.4513387185654798
+ChemBERTa-Concat (frozen),3,Test,MAE,100.8525565557039
+RDKit-only (Ridge),4,Train,R2,0.2358330421943986
+RDKit-only (Ridge),4,Train,MAE,120.49736183694804
+RDKit-only (Ridge),4,Test,R2,0.24272186830124465
+RDKit-only (Ridge),4,Test,MAE,119.68255292963418
+RDKit-only (RandomForest),4,Train,R2,0.9097624440151268
+RDKit-only (RandomForest),4,Train,MAE,36.65926064687704
+RDKit-only (RandomForest),4,Test,R2,0.5515743038723593
+RDKit-only (RandomForest),4,Test,MAE,82.40352936066316
+RDKit-only (GradientBoosting),4,Train,R2,0.3212175788019267
+RDKit-only (GradientBoosting),4,Train,MAE,112.61646886980365
+RDKit-only (GradientBoosting),4,Test,R2,0.31593276236809054
+RDKit-only (GradientBoosting),4,Test,MAE,112.6025331230542
+ChemBERTa-frozen-RT (CLS only),4,Train,R2,0.38454519404608456
+ChemBERTa-frozen-RT (CLS only),4,Train,MAE,107.63243981247004
+ChemBERTa-frozen-RT (CLS only),4,Test,R2,0.3793935978495875
+ChemBERTa-frozen-RT (CLS only),4,Test,MAE,107.34865815120727
+ChemBERTa-Concat (frozen),4,Train,R2,0.4566760909654607
+ChemBERTa-Concat (frozen),4,Train,MAE,99.91395154334558
+ChemBERTa-Concat (frozen),4,Test,R2,0.4513057914616131
+ChemBERTa-Concat (frozen),4,Test,MAE,99.8619468555644
