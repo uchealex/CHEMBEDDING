@@ -81,14 +81,24 @@ Pending: frozen branch of `chemberta_concat_baseline_lipid.ipynb` on Colab.
 A1, A5, A6 are lipid-specific so far. The peptide domain has different chemistry and a different descriptor distribution (mostly-linear amino-acid polymers); the descriptor set might be more or less redundant there. Determines whether the rebuttal's "even worst-case, MTL is doing nontrivial nonlinear work" argument generalizes or needs to be lipid-scoped.
 Pending: `chemberta_concat_baseline_peptide.ipynb` Section 1 (sklearn baseline; runs on CPU once peptide CSVs are accessible) + an analogous `scripts/baseline_feature_importance_peptide.py`.
 
+**B5. Single-task peptide RT pre-training also transfers to lipid (Reviewer 1, comment 3).**
+Reviewer comment 3 explicitly asks for transfer from a single-task peptide RT model to lipid, to disentangle the contributions of (a) peptide pre-training and (b) multi-task auxiliary supervision. Decision rule:
+- If single-task transfer ≈ MTL transfer at every lipid fraction: peptide pre-training per se is the load-bearing mechanism; the auxiliary descriptor supervision adds little in the transfer setting. Manuscript should reframe to "peptide pre-training is the key, MTL is incidental."
+- If MTL transfer > single-task transfer (especially at low lipid fractions): both mechanisms contribute. The paper's claim is robust but should explicitly attribute parts of the gain to each.
+- If single-task > MTL: the auxiliary objective is hurting transfer; manuscript needs substantial reframing.
+Pending: `chemberta_TransferLearning_peptide-singletaskRT_to_Lipidmetlin_{A,B}.ipynb` on Colab.
+
+**B6. (Was C1) MTL pre-training transfers to lipid better than concat pre-training.**
+The paper's headline claim is about transfer, and the reviewer's argument bites differently here: peptide-time concatenation cannot shape the encoder (descriptors flow around it), while MTL gradients explicitly do. This is the comparison most likely to favor MTL *even if* MTL ≈ Concat in direct training (B1/B2). Decision rule:
+- If MTL transfer > Concat transfer at low lipid fractions: settles the rebuttal in favor of the paper's framing — the auxiliary supervision objective genuinely shapes the encoder during pretraining in ways that pure concatenation cannot, regardless of how the two compare in direct training.
+- If Concat transfer ≈ MTL transfer: most damaging outcome. Combined with B1/B2 outcome, would force a substantial manuscript reframing.
+Pending: `chemberta_TransferLearning_peptide-concat_to_Lipidmetlin_{A,B}.ipynb` on Colab.
+
 ---
 
 ## C. Adjacent claims (not yet scoped)
 
-**C1. MTL pre-training transfers to lipid better than concat pre-training.**
-The paper's headline claim is about transfer, and the reviewer's argument bites differently here: peptide-time concatenation cannot shape the encoder (descriptors flow around it), while MTL gradients explicitly do. This is the comparison most likely to favor MTL even if MTL ≈ Concat in direct training. Would require a new transfer-experiment notebook that mirrors `chemberta_TransferLearning_peptide_RTrdkit_Lipidmetlin_250k_*` but with a peptide-RT-only and a peptide-RT-concat variant as additional source-task baselines.
-
-**C2. The descriptor set could be pruned without loss.**
+**C1. The descriptor set could be pruned without loss.**
 A5 suggests `mol_weight` ↔ `heavy_atoms` collinearity and a near-inert `rotatable_bonds`. An MTL run with a reduced auxiliary-target set (e.g. drop `heavy_atoms`, drop `rotatable_bonds`) would test whether the auxiliary supervision is robust to descriptor pruning. Worth mentioning as a limitation / future work even if not run.
 
 ---
@@ -108,5 +118,6 @@ A5 suggests `mol_weight` ↔ `heavy_atoms` collinearity and a near-inert `rotata
 | B2 | ⏳ pending Colab + peptide CSVs | `chemberta_concat_baseline_peptide.ipynb` |
 | B3 | ⏳ pending Colab | frozen branch of lipid notebook |
 | B4 | ⏳ pending peptide CSVs | peptide notebook + new feature-importance script |
-| C1 | not yet scoped | needs new transfer notebook |
-| C2 | not yet scoped | optional ablation |
+| B5 | ⏳ pending Colab | `chemberta_TransferLearning_peptide-singletaskRT_to_Lipidmetlin_{A,B}.ipynb` |
+| B6 | ⏳ pending Colab | `chemberta_TransferLearning_peptide-concat_to_Lipidmetlin_{A,B}.ipynb` |
+| C1 | not yet scoped | optional ablation (descriptor pruning) |
